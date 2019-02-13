@@ -10,3 +10,8 @@ nasm -f macho32 invierte_main.asm -o invierte_main.o
 nasm -f macho32 invierte.asm -o invierte.o
 ld -lc -arch i386  invierte_main.o invierte.o -o invierte_main -macosx_version_min 10.13 -lSystem 
 ./invierte_main
+
+
+nasm -f macho32 -o suma_int.o suma_int.asm
+gcc -m32  -o print_suma_int suma_int.o print_suma.c
+./print_suma_int
